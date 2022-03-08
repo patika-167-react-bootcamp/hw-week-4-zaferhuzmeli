@@ -1,9 +1,8 @@
-import axios from 'axios';
-
-const API_URL = process.env.REACT_APP_URL;
+// get api service to use all axios services
+import instance from './api.service';
 
 export const register = (username: string, password: string, passwordConfirm: string) => {
-    return axios.post(API_URL + 'auth/register', {
+    return instance().post('auth/register', {
         username,
         password,
         passwordConfirm
@@ -11,12 +10,15 @@ export const register = (username: string, password: string, passwordConfirm: st
 }
 
 export const login = (username: string, password: string) => {
-    return axios.post(API_URL + 'auth/login', {
+    return instance().post('auth/login', {
         username,
         password
     }).then(response => {
         if (response.data.token) {
             localStorage.setItem('user', JSON.stringify(response.data));
+            instance().defaults.headers.common[
+                "Authorization"
+            ] = `Bearer ${response.data}`
         }
         return response.data;
     });
