@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Getting Started TODO APP with Create React App
+
+## Login Page if user not logged in automatically redirect to login page
+
+![loginPage](/public/login.png "loginPage")
+
+## After Login Page Automatically Going to Profile Page with changed navbar
+
+![profilePage](/public/profile.png "ProfilePage")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Then if user click the home button it will redirect to home page
+![homePage](/public/homepage.png "HomePage")
+
 
 ## Available Scripts
 

@@ -36,7 +36,7 @@ const Login: React.FC<Props> = ({ history }) => {
 
         login(username, password).then(
             () => {
-                history.push("/home");
+                history.push("/profile");
                 window.location.reload();
             },
             (error) => {
